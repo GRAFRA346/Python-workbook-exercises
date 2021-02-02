@@ -11,7 +11,7 @@ while True:
         -Per effettuare una Moltiplicazione seleziona 3;
         -Per effettuare una Divisione seleziona 4;
         -Per effettuare un Calcolo Esponenziale seleziona 5;
-        -Per calcolare Radice Quadrata seleziona 6;
+        -Per calcolare la Radice Quadrata seleziona 6;
         -Per uscire dal programma puoi digitare ESC;
         ''')
     def Addizzione():
@@ -19,45 +19,62 @@ while True:
         print('''
         -INSERISCI DEI NUMERI
         -INSERISCI 0 PER TERMINARE!''')
-        n = float(input("Inserisci numero:"))
-        somma = n
-        while n != 0:
-            n = float(input("Inserisci il numero:"))
-            somma += n
-        print("La somma è:", somma)
+        try:
+            n = float(input("Inserisci numero:"))
+            somma = n
+            while n != 0:
+                n = float(input("Inserisci il numero:"))
+                somma += n
+            print("La somma è:", somma)
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
     def Sottrazione():
         print("\nHai scelto: Sottrazione")
         print('''
         -INSERISCI DEI NUMERI
         -INSERISCI 0 PER TERMINARE!''')
-        n = float(input("Inserisci numero:"))
-        sottrai = n
-        while n != 0:
-            n = float(input("Inserisci il numero:"))
-            sottrai -= n
-        print("Il risultato è:", sottrai)
+        try:
+            n = float(input("Inserisci numero:"))
+            sottrai = n
+            while n != 0:
+                n = float(input("Inserisci il numero:"))
+                sottrai -= n
+            print("Il risultato è:", sottrai)
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
     def Moltiplicazione():
-        print("\nHai scelto: Moltiplicazione\n")
-        a = float(input("Inserisci il primo numero: "))
-        b = float(input("Inserisci il secondo numero: "))
-        print("Il risultato della somma è: " + str(a * b))
+        try:
+            print("\nHai scelto: Moltiplicazione\n")
+            a = float(input("Inserisci il primo numero: "))
+            b = float(input("Inserisci il secondo numero: "))
+            print("Il risultato della moltiplicazione è: " + str(a * b))
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
     def Divisione():
         try:
             print("\nHai scelto: Divisione\n")
             a = float(input("Inserisci il primo numero: "))
             b = float(input("Inserisci il secondo numero: "))
-            print("Il risultato della somma è: " + str(a / b))
+            print("Il risultato della divisione è: " + str(a / b))
         except ZeroDivisionError:
             print("Non puoi dividere per Zero!! Riprova")
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
     def Calcolo_Esponenziale():
-        print("\nHai scelto: Calcolo Esponenziale\n")
-        a = float(input("Inserisci la base: "))
-        b = float(input("Inserisci l\'esponente: "))
-        print("Il risultato della somma è: " + str(a ** b))
+        try:
+            print("\nHai scelto: Calcolo Esponenziale\n")
+            a = float(input("Inserisci la base: "))
+            b = float(input("Inserisci l\'esponente: "))
+            print("Il risultato è: " + str(a ** b))
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
     def Radice_Quadrata():
-        print("\nHai scelto: Calcolo Radice Quadrata\n")
-        a = float(input("Inserisci numero: "))
-        print("La radice quadrata di " + str(a), "è: " + str(sqrt(a)))
+        try:
+            print("\nHai scelto: Calcolo Radice Quadrata\n")
+            a = float(input("Inserisci numero: "))
+            print("La radice quadrata di " + str(a), "è: " + str(sqrt(a)))
+        except ValueError:
+            print("E' obbligatorio inserire un numero")
 
     scelta = input("Inserisci il numero corrispondete all\'azione desiderata -->")
 
@@ -79,7 +96,7 @@ while True:
 +++++++++++++++++++++++++++++++++++++++++''')
         break
     elif scelta != "1" or "2" or "3" or "4" or "5" or "6":
-        print("Opzione Errata")
+        print("Opzione Errata!")
 
     loop = input("\nDesideri continuare ad usare l\'applicazione? S/N")
     if loop == "S" or loop == "s":
