@@ -1,4 +1,4 @@
-import math
+from math import sqrt
 
 while True:
     print('''
@@ -57,7 +57,7 @@ while True:
     def Radice_Quadrata():
         print("\nHai scelto: Calcolo Radice Quadrata\n")
         a = float(input("Inserisci numero: "))
-        print("La radice quadrata di " + str(a), "è: " + str(math.sqrt(a)))
+        print("La radice quadrata di " + str(a), "è: " + str(sqrt(a)))
 
     scelta = input("Inserisci il numero corrispondete all\'azione desiderata -->")
 
